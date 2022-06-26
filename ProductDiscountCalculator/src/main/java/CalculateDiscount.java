@@ -13,10 +13,10 @@ public class CalculateDiscount extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       String description = request.getParameter("description");
+        String description = request.getParameter("description");
         float price = Float.parseFloat(request.getParameter("price"));
         int discount_percent = Integer.parseInt(request.getParameter("discount"));
-        float discount = (float) (price*discount_percent*0.01);
+        float discount = (float) (price * discount_percent * 0.01);
         float total = price - discount;
 
 

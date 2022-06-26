@@ -14,7 +14,7 @@
   <h1>Product Discount Calculator </h1>
   <form action="/CalculateDiscount" method="post">
     <label> Mo ta san pham</label> <input type="text" placeholder="Mo ta san pham" name="description" ><br>
-    <label> Gia niem yet</label><input type="number" placeholder="Gia niem yet" name="price" ><br>
+    <label> Gia niem yet </label><input type="number" placeholder="Gia niem yet" name="price" ><br>
     <label> Ti le chiet khau <input type="number" placeholder="ty le chiet khau" value="" name="discount"></label><br>
     <input type="submit" value="Calculate discount">
   </form>
