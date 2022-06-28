@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="79d05b9b-4d86-4aaa-9560-c34ed31e14b3" name="Changes" comment="" />
+    <list default="true" id="79d05b9b-4d86-4aaa-9560-c34ed31e14b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../CRUD/src/main/java/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CRUD/src/main/java/CustomerDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CRUDSevlet/src/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CRUDSevlet/src/CustomerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductDiscountCalculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../ProductDiscountCalculator/.idea/gradle.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,6 +188,7 @@
       <workItem from="1656171022840" duration="182000" />
       <workItem from="1656173895193" duration="6000" />
       <workItem from="1656175455609" duration="8000" />
+      <workItem from="1656247759715" duration="8000" />
     </task>
     <servers />
   </component>
