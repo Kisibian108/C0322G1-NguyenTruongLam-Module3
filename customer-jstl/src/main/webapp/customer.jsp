@@ -27,9 +27,7 @@
             <td> ${customer.name} </td>
             <td> ${customer.birthday} </td>
             <td> ${customer.address} </td>
-            <td>
-                <img src="${customer.img}" alt="">
-            </td>
+            <td><img src="${customer.img}" alt=""></td>
         </tr>
     </c:forEach>
 </table>
