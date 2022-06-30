@@ -52,7 +52,3 @@ public class ProductServiceImpl implements ProductService {
         return productList;
     }
 }
-//    Set<Integer> set = map.keySet();
-//        for (Integer key : set) {
-//                System.out.println(key + " " + map.get(key));
-//                }
