@@ -138,11 +138,9 @@ public class StudentRepositoryImpl implements IStudentRepository {
                 int score = resultSet.getInt("score");
                 student = new Student(idS, name, className, gender, score);
             }
-
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
         return student;
     }
 }

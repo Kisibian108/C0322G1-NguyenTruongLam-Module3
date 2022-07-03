@@ -5,8 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class BaseRepository {
-
-    private String jdbcURL = "jdbc:mysql://localhost:3306/ss12_c03";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/case_study2";
     private String jdbcUsername = "root";
     private String jdbcPassword = "LAMftu@123";
     private static Connection connection;
@@ -14,7 +13,6 @@ public class BaseRepository {
     public BaseRepository() {
 
     }
-
     public Connection getConnection() {
         connection = null;
         try {
@@ -26,6 +24,4 @@ public class BaseRepository {
         }
         return connection;
     }
-
-
 }

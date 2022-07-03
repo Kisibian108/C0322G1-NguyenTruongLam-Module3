@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 public class Product {
 //    id, tên sản phẩm, giá sản phẩm, mô tả của sản phẩm, nhà sản xuất.

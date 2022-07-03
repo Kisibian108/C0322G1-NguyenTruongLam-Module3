@@ -1,18 +1,16 @@
-package repository;
+package Repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class BaseRepository {
-
-    private String jdbcURL = "jdbc:mysql://localhost:3306/ss12_c03";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/demo";
     private String jdbcUsername = "root";
     private String jdbcPassword = "LAMftu@123";
     private static Connection connection;
 
     public BaseRepository() {
-
     }
 
     public Connection getConnection() {
@@ -26,6 +24,4 @@ public class BaseRepository {
         }
         return connection;
     }
-
-
 }

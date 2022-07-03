@@ -19,7 +19,6 @@ public class StudentServlet extends HttpServlet {
     static List<Student> studentList = new ArrayList<>();
     private IStudentService studentService = new StudentServiceImpl();
 
-
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         if (action == null) {

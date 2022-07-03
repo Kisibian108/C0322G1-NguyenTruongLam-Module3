@@ -1,22 +1,20 @@
-package Controller;
+package controller;
 
-import Model.Product;
-import service.ProductService;
+import model.Product;
+import service.IProductService;
 import service.ProductServiceImpl;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.sql.SQLException;
 import java.util.List;
-import java.util.Map;
 
 @WebServlet(name = "ProductServlet", urlPatterns = "/product")
 public class ProductServlet extends HttpServlet {
-    static Map<Integer,Product> productMap = new HashMap<>();
-    private static final ProductService productService = new ProductServiceImpl();
+
+    private static final IProductService productService = new ProductServiceImpl();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -41,7 +39,11 @@ public class ProductServlet extends HttpServlet {
                 searchCustomer(request, response);
                 break;
             default:
-                listProducts(request, response);
+                try {
+                    listProducts(request, response);
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
                 break;
         }
     }
@@ -144,10 +146,9 @@ public class ProductServlet extends HttpServlet {
         }
     }
 
-    private void listProducts(HttpServletRequest request, HttpServletResponse response) {
+    private void listProducts(HttpServletRequest request, HttpServletResponse response) throws SQLException {
         List<Product> productList = productService.findAll();
         request.setAttribute("products", productList);
-
         RequestDispatcher dispatcher = request.getRequestDispatcher("product/list.jsp");
         try {
             dispatcher.forward(request, response);
@@ -157,6 +158,18 @@ public class ProductServlet extends HttpServlet {
             e.printStackTrace();
         }
     }
+
+//    List<Student> studentList = studentService.findAll();
+//        request.setAttribute("studentList",studentList);
+//    List<ClassCG> classCGList = classService.findAll();
+//        request.setAttribute("classList", classCGList);
+//        try {
+//        request.getRequestDispatcher("view/student/list.jsp").forward(request,response);
+//    } catch (ServletException e) {
+//        e.printStackTrace();
+//    } catch (IOException e) {
+//        e.printStackTrace();
+//    }
 
 
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
