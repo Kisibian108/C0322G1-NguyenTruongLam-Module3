@@ -1,7 +1,8 @@
-package service;
+package service.customer;
 
-import model.Customer;
+import model.customer.Customer;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface ICustomerService {
@@ -12,7 +13,9 @@ public interface ICustomerService {
 
     void edit(Customer customer);
 
-    void delete();
+    void delete(int id) throws SQLException;
 
     Customer findById(int id);
+
+    List<Customer> findByName(String name);
 }

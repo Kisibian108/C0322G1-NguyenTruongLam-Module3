@@ -13,7 +13,7 @@ public interface IProductService {
 
     void save(Product product);
 
-    List<Product> findById(int id);
+    Product findById(int id);
 
     void edit(Product product);
 

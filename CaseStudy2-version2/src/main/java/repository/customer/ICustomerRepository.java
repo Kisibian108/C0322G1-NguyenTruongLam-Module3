@@ -1,7 +1,8 @@
-package repository;
+package repository.customer;
 
-import model.Customer;
+import model.customer.Customer;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public interface ICustomerRepository {
@@ -12,7 +13,9 @@ public interface ICustomerRepository {
 
     void edit(Customer customer);
 
-    void delete();
+    boolean delete(int id) throws SQLException;
 
     Customer findById(int id);
+
+    List<Customer> findByName(String name);
 }

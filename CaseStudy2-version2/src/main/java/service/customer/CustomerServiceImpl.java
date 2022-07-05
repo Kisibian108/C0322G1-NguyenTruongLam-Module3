@@ -1,12 +1,13 @@
-package service;
+package service.customer;
 
-import model.Customer;
-import repository.CustomerRepositoryImpl;
-import repository.ICustomerRepository;
+import model.customer.Customer;
+import repository.customer.CustomerRepositoryImpl;
+import repository.customer.ICustomerRepository;
 
+import java.sql.SQLException;
 import java.util.List;
 
-public class CustomerServiceImpl implements ICustomerService{
+public class CustomerServiceImpl implements ICustomerService {
 
     ICustomerRepository customerRepository = new CustomerRepositoryImpl();
     @Override
@@ -24,13 +25,23 @@ public class CustomerServiceImpl implements ICustomerService{
         customerRepository.edit(customer);
     }
 
+//    @Override
+//    public void delete(int id) {
+//
+//    }
+
     @Override
-    public void delete() {
-        customerRepository.delete();
+    public void delete(int id) throws SQLException {
+        customerRepository.delete(id);
     }
 
     @Override
     public Customer findById(int id) {
         return customerRepository.findById(id);
+    }
+
+    @Override
+    public List<Customer> findByName(String name) {
+        return customerRepository.findByName(name);
     }
 }

@@ -1,7 +1,8 @@
-package model;
+package model.customer;
 
 public class Customer {
     private int id;
+    private int typeId;
     private String name;
     private String birthday;
     private int gender;
@@ -13,10 +14,11 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int id, String name, String date_of_birth, int gender, String idCard, String phoneNumber, String email, String address) {
+    public Customer(int id, int typeId, String name, String birthday, int gender, String idCard, String phoneNumber, String email, String address) {
         this.id = id;
+        this.typeId = typeId;
         this.name = name;
-        this.birthday = date_of_birth;
+        this.birthday = birthday;
         this.gender = gender;
         this.idCard = idCard;
         this.phoneNumber = phoneNumber;
@@ -30,6 +32,14 @@ public class Customer {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getTypeId() {
+        return typeId;
+    }
+
+    public void setTypeId(int typeId) {
+        this.typeId = typeId;
     }
 
     public String getName() {

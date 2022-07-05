@@ -61,12 +61,11 @@ public class ProductRepositoryImpl implements IProductRepository {
 
     @Override
     public void save(Product product) {
-
     }
 
     @Override
-    public List<Product> findById(int id) {
-        List<Product> productList = null;
+    public Product findById(int id) {
+        Product product = new Product();
         try {
             Connection connection = BaseRepository.getConnectDB();
 //          Tạo câu lệnh SQL
@@ -83,15 +82,13 @@ public class ProductRepositoryImpl implements IProductRepository {
                 String description = resultSet.getString("description");
                 String productor = resultSet.getString("productor");
 
-                Product product = new Product(idS, name, price, description, productor);
-                productList.add(product);
+                 product = new Product(idS, name, price, description, productor);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-        return productList;
+        return product;
     }
-
 
     @Override
     public void edit(Product product) {

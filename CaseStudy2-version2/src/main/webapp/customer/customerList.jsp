@@ -15,6 +15,7 @@
 </head>
 <body>
 <h1>Customer List</h1>
+<a href="/customer?action=create" >Create new Customer</a>
 
 <form action="/customer">
     <input type="text" name="nameSearch">
@@ -23,6 +24,7 @@
 <table class="table">
     <tr>
         <th>ID</th>
+        <th>IDType</th>
         <th>Name</th>
         <th>Birthday</th>
         <th>Gender</th>
@@ -30,26 +32,80 @@
         <th>Phone Number</th>
         <th>Email</th>
         <th>Address</th>
-        <th>Action</th>
+        <th>Edit</th>
+        <th>Delete</th>
     </tr>
-
+<%--    <c:forEach items="${classList}" var="cls">--%>
+<%--        <c:if test="${cls.id==student.idClass}">--%>
+<%--            <td>${cls.name}</td>--%>
+<%--        </c:if>--%>
+<%--    </c:forEach>--%>
     <c:forEach items="${customerList}" var="customer">
         <tr>
             <td> ${customer.id}</td>
+                <c:forEach items="${customerTypeList}" var="type">
+                <c:if test="${type.id == customer.typeId}">
+            <td>${type.name}</td>
+            </c:if>
+            </c:forEach>
             <td> ${customer.name} </td>
             <td> ${customer.birthday} </td>
-            <td> ${customer.gender} </td>
+            <td>
+                <c:if test="${customer.gender == 0}">
+                    Male
+                </c:if>
+                <c:if test="${customer.gender == 1}">
+                    Female
+                </c:if>
+            </td>
             <td> ${customer.idCard} </td>
             <td> ${customer.phoneNumber} </td>
             <td> ${customer.email} </td>
             <td> ${customer.address} </td>
-<%--            <c:if test="${customer.gender == 0}">--%>
-<%--                <td>Male</td>--%>
-<%--            </c:if>--%>
-<%--            <c:if test="${customer.gender == 1}">--%>
-<%--                <td>Female</td>--%>
-<%--            </c:if>--%>
+                <%--            <c:if test="${customer.gender == 0}">--%>
+                <%--                <td>Male</td>--%>
+                <%--            </c:if>--%>
+                <%--            <c:if test="${customer.gender == 1}">--%>
+                <%--                <td>Female</td>--%>
+                <%--            </c:if>--%>
             <td><a href="/customer?action=edit&id=${customer.id}" class="btn btn-primary">Edit</a></td>
+            <!-- Button trigger modal -->
+
+            <td>
+            <button type="button" class="btn btn-primary"  onclick="infoDelete('${customer.id}','${customer.name}')" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete
+            </button>
+            </td>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <form action="/customer" method="post">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" hidden name="idDelete" id="idDelete">
+                            <input type="text" hidden name="action" value="delete">
+                            <span>Bạn có muốn xóa khách hàng: </span>
+                            <span id="nameDelete"></span>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Yes</button>
+                        </div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+                <script>
+                    function infoDelete(id, name) {
+                        document.getElementById("idDelete").value = id;
+                        document.getElementById("nameDelete").innerText = name;
+                    }
+                </script>
+<%--            <td><a href="/customer?action=delete&id=${customer.id}" class="btn btn-primary">Delete</a></td>--%>
         </tr>
     </c:forEach>
 

@@ -21,18 +21,22 @@
             <input name="id" value="${customer.id}" readonly type="number" class="form-control" id="exampleInputEmail1">
         </div>
         <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">IdType</label>
+            <input name="idType" value="${customer.typeId}"  type="text" class="form-control" id="exampleInputEmail11">
+        </div>
+        <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Name</label>
             <input name="name" value="${customer.name}" type="text" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Class Name</label>
-            <input name="className" value="${customer.birthday}" type="text" class="form-control">
+            <label for="exampleInputEmail1" class="form-label">Birthday</label>
+            <input name="birthday" value="${customer.birthday}" type="text" class="form-control">
         </div>
+        <label>Gender</label>
         <select name="gender">
             <c:if test="${customer.gender == 1}">
                 <option value="1" selected>Female</option>
                 <option value="0">Male</option>
-
             </c:if>
             <c:if test="${customer.gender == 0}">
                 <option value="1">Female</option>
@@ -41,20 +45,20 @@
 
         </select>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Score</label>
-            <input value="${customer.idCard}" name="score" type="number" class="form-control">
+            <label for="exampleInputEmail1" class="form-label">idCard</label>
+            <input value="${customer.idCard}" name="idCard" type="text" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Score</label>
-            <input value="${customer.phoneNumber}" name="score" type="number" class="form-control">
+            <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+            <input value="${customer.phoneNumber}" name="phoneNumber" type="number" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Score</label>
-            <input value="${customer.email}" name="score" type="number" class="form-control">
+            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <input value="${customer.email}" name="email" type="text" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Score</label>
-            <input value="${customer.address}" name="score" type="number" class="form-control">
+            <label for="exampleInputEmail1" class="form-label">Address</label>
+            <input value="${customer.address}" name="address" type="text" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
