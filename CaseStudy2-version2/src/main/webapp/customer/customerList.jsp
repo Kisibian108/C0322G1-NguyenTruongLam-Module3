@@ -12,6 +12,8 @@
     <title>Customer List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap413/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap4.min.css" />
 </head>
 <body>
 <h1>Customer List</h1>
@@ -21,7 +23,8 @@
     <input type="text" name="nameSearch">
     <input type="submit" name="action" value="search">
 </form>
-<table class="table">
+<table class="table" id="tableCustomer" class="table table-striped table-bordered" >
+    <thead>
     <tr>
         <th>ID</th>
         <th>IDType</th>
@@ -35,11 +38,13 @@
         <th>Edit</th>
         <th>Delete</th>
     </tr>
+    </thead>
 <%--    <c:forEach items="${classList}" var="cls">--%>
 <%--        <c:if test="${cls.id==student.idClass}">--%>
 <%--            <td>${cls.name}</td>--%>
 <%--        </c:if>--%>
 <%--    </c:forEach>--%>
+    <tbody>
     <c:forEach items="${customerList}" var="customer">
         <tr>
             <td> ${customer.id}</td>
@@ -108,10 +113,22 @@
 <%--            <td><a href="/customer?action=delete&id=${customer.id}" class="btn btn-primary">Delete</a></td>--%>
         </tr>
     </c:forEach>
-
+    </tbody>
 </table>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
+<script src="jquery/jquery-3.5.1.min.js"></script>
+<script src="datatables/js/jquery.dataTables.min.js"></script>
+<script src="datatables/js/dataTables.bootstrap4.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#tableCustomer').dataTable( {
+            "dom": 'lrtip',
+            "lengthChange": false,
+            "pageLength": 5
+        } );
+    } );
+</script>
 </html>
