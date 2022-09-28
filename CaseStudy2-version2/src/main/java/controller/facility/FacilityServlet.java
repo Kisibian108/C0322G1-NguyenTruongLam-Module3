@@ -175,7 +175,7 @@ public class FacilityServlet extends HttpServlet {
 
     private void saveFacility(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        int id = Integer.parseInt(request.getParameter("id"));
+//        int id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         int area = Integer.parseInt(request.getParameter("area"));
         double cost = Double.parseDouble(request.getParameter("cost"));
@@ -188,7 +188,7 @@ public class FacilityServlet extends HttpServlet {
         int floor = Integer.parseInt(request.getParameter("floor"));
         String facilityFree = request.getParameter("facilityfree");
 
-        Facility facility = new Facility(id, name, area, cost, maxPeople, rentType, facilityType, standardRoom, convenience, poolArea, floor, facilityFree);
+        Facility facility = new Facility( name, area, cost, maxPeople, rentType, facilityType, standardRoom, convenience, poolArea, floor, facilityFree);
         facilityService.create(facility);
         response.sendRedirect("/facility");
     }

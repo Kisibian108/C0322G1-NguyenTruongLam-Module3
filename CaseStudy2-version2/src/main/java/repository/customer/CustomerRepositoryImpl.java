@@ -10,14 +10,14 @@ import java.util.List;
 public class CustomerRepositoryImpl implements ICustomerRepository {
     static List<Customer> customerList = new ArrayList<>();
     private static final String FIND_ALL = "SELECT * FROM customer ";
-    private static final String FIND_BY_NAME = "SELECT * FROM customer where name like ? ";
+    private static final String FIND_BY_NAME = "SELECT * FROM customer where name like ? and phone_number like ? ";
     private static final String FIND_BY_ID = "SELECT * FROM customer where id = ? ";
     private static final String DELETE = "delete FROM customer where id = ? ";
     private static final String INSERT = " INSERT INTO customer (customer_type_id, name, date_of_birth, gender, id_card, " +
             "phone_number, email, address ) " +
             " values( ?, ?, ?, ?, ?, ?, ?, ?) ";
 
-    private static final String UPDATE = " UPDATE customer SET name = ? , date_of_birth = ? , " +
+    private static final String UPDATE = " UPDATE customer SET customer_type_id = ?, name = ? , date_of_birth = ? , " +
             " gender = ?, id_card = ?,phone_number = ?, email = ?, address = ?  where id = ? ";
 
     @Override
@@ -81,14 +81,15 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
             Connection connection = new BaseRepository().getConnection();
             PreparedStatement preparedStatement =
                     connection.prepareStatement(UPDATE);
-            preparedStatement.setString(1, customer.getName());
-            preparedStatement.setString(2, customer.getBirthday());
-            preparedStatement.setInt(3, customer.getGender());
-            preparedStatement.setString(4, customer.getIdCard());
-            preparedStatement.setString(5, customer.getPhoneNumber());
-            preparedStatement.setString(6, customer.getEmail());
-            preparedStatement.setString(7, customer.getAddress());
-            preparedStatement.setInt(8, customer.getId());
+            preparedStatement.setInt(1, customer.getTypeId());
+            preparedStatement.setString(2, customer.getName());
+            preparedStatement.setString(3, customer.getBirthday());
+            preparedStatement.setInt(4, customer.getGender());
+            preparedStatement.setString(5, customer.getIdCard());
+            preparedStatement.setString(6, customer.getPhoneNumber());
+            preparedStatement.setString(7, customer.getEmail());
+            preparedStatement.setString(8, customer.getAddress());
+            preparedStatement.setInt(9, customer.getId());
             preparedStatement.executeUpdate();
 
         } catch (SQLException throwables) {
@@ -142,7 +143,7 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
     }
 
     @Override
-    public List<Customer> findByName(String nameS) {
+    public List<Customer> findByName(String nameS, String phoneS) {
         customerList.clear();
         try {
             Connection connection = new BaseRepository().getConnection();
@@ -152,6 +153,7 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
 //          Dùng executeQuery/Update để thực thi.
 //          ResultSet : Nhận kết quả từ DB trả về để xử lý
             preparedStatement.setString(1, "%" + nameS + "%");
+            preparedStatement.setString(2, "%" + phoneS + "%");
             ResultSet resultSet = preparedStatement.executeQuery();
             Customer customer = null;
             while (resultSet.next()) {
@@ -167,7 +169,6 @@ public class CustomerRepositoryImpl implements ICustomerRepository {
                 customer = new Customer(idS, typeId, name, birthday, gender, idCard,phoneNumber,email,address);
                 customerList.add(customer);
             }
-
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

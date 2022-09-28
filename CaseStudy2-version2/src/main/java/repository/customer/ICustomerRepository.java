@@ -17,5 +17,5 @@ public interface ICustomerRepository {
 
     Customer findById(int id);
 
-    List<Customer> findByName(String name);
+    List<Customer> findByName(String name, String phone);
 }

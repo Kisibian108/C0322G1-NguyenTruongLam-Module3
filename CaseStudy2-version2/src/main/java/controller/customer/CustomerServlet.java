@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet(name = "CustomerServlet", value = "/customer")
 public class CustomerServlet extends HttpServlet {
@@ -50,19 +51,6 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
-    private void showCreateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        customerTypeList = customerTypeService.findAll();
-        request.setAttribute("customerTypeList",customerTypeList);
-        request.getRequestDispatcher("customer/create.jsp").forward(request, response);
-    }
-
-    private void findByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String nameSearch = request.getParameter("nameSearch");
-        customerList = customerService.findByName(nameSearch);
-        request.setAttribute("customerList", customerList);
-        request.getRequestDispatcher("customer/customerList.jsp").forward(request, response);
-    }
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -89,6 +77,20 @@ public class CustomerServlet extends HttpServlet {
         }
     }
 
+    private void showCreateForm(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        customerTypeList = customerTypeService.findAll();
+        request.setAttribute("customerTypeList",customerTypeList);
+        request.getRequestDispatcher("customer/create.jsp").forward(request, response);
+    }
+
+    private void findByName(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String nameSearch = request.getParameter("nameSearch");
+        String phoneSearch = request.getParameter("phoneSearch");
+        customerList = customerService.findByName(nameSearch,phoneSearch);
+        request.setAttribute("customerList", customerList);
+        request.getRequestDispatcher("customer/list.jsp").forward(request, response);
+    }
+
     private void updateCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         int idType = Integer.parseInt(request.getParameter("idType"));
@@ -107,7 +109,7 @@ public class CustomerServlet extends HttpServlet {
 
     private void saveCustomer(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int id = Integer.parseInt(request.getParameter("id"));
+//        int id = Integer.parseInt(request.getParameter("id"));
         int idType = Integer.parseInt(request.getParameter("idType"));
         String name = request.getParameter("name");
         String birthday = request.getParameter("birthday");
@@ -116,10 +118,23 @@ public class CustomerServlet extends HttpServlet {
         String phoneNumber = request.getParameter("phoneNumber");
         String email = request.getParameter("email");
         String address = request.getParameter("address");
+        Customer customer = new Customer(idType, name, birthday, gender, idCard, phoneNumber, email, address);
 
-        Customer customer = new Customer(id,idType, name, birthday, gender, idCard, phoneNumber, email, address);
-        customerService.create(customer);
-        response.sendRedirect("/customer");
+//        customerService.create(customer);
+//        response.sendRedirect("/customer");
+        List<CustomerType> customerTypeList = customerTypeService.findAll();
+        request.setAttribute("customerTypeList",customerTypeList);
+        Map<String,String> mapValidate = customerService.create(customer);
+        if (mapValidate.isEmpty()){
+            List<Customer> customerList = customerService.findAll();
+            request.setAttribute("customerList", customerList);
+            request.setAttribute("mess","them moi thanh cong");
+            request.getRequestDispatcher("customer/list.jsp").forward(request,response);
+        }else {
+            request.setAttribute("mess","them moi that bai");
+            request.setAttribute("mapValidate",mapValidate);
+            request.getRequestDispatcher("customer/create.jsp").forward(request,response);
+        }
     }
 
     private void showFormEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -142,7 +157,7 @@ public class CustomerServlet extends HttpServlet {
         request.setAttribute("customerList", customerList);
         List<CustomerType> customerTypeList = customerTypeService.findAll();
         request.setAttribute("customerTypeList", customerTypeList);
-        request.getRequestDispatcher("customer/customerList.jsp").forward(request,response);
+        request.getRequestDispatcher("customer/list.jsp").forward(request,response);
         }
 
     private void findAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -151,7 +166,7 @@ public class CustomerServlet extends HttpServlet {
         List<CustomerType> customerTypeList = customerTypeService.findAll();
         request.setAttribute("customerTypeList", customerTypeList);
         try {
-            request.getRequestDispatcher("customer/customerList.jsp").forward(request, response);
+            request.getRequestDispatcher("customer/list.jsp").forward(request, response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {

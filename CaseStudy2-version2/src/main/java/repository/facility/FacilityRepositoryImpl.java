@@ -14,9 +14,9 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
     private static final String FIND_BY_NAME = "SELECT * FROM facility where name like ? ";
     private static final String FIND_BY_ID = "SELECT * FROM facility where id = ? ";
     private static final String DELETE = "delete FROM facility where id = ? ";
-    private static final String INSERT = " INSERT INTO facility (id, name, area, cost, max_people, " +
+    private static final String INSERT = " INSERT INTO facility ( name, area, cost, max_people, " +
             "rent_type_id, facility_type_id, standard_room, description_other_convenience, pool_area, number_of_floors, facility_free ) " +
-            " values( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ";
+            " values( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ) ";
 
     private static final String UPDATE = " UPDATE facility SET name = ? , area = ? , " +
             " cost = ?, max_people = ?,rent_type_id = ?, facility_type_id = ?, standard_room = ?, description_other_convenience = ?, " +
@@ -55,18 +55,18 @@ public class FacilityRepositoryImpl implements IFacilityRepository {
             Connection connection = new BaseRepository().getConnection();
             PreparedStatement preparedStatement =
                     connection.prepareStatement(INSERT);
-            preparedStatement.setInt(1, facility.getId());
-            preparedStatement.setString(2, facility.getName());
-            preparedStatement.setInt(3, facility.getArea());
-            preparedStatement.setDouble(4, facility.getArea());
-            preparedStatement.setInt(5, (facility.getMaxPeople()));
-            preparedStatement.setInt(6, facility.getRentTypeId());
-            preparedStatement.setInt(7, facility.getFacilityTypeId());
-            preparedStatement.setString(8, facility.getStandardRoom());
-            preparedStatement.setString(9, facility.getConvenience());
-            preparedStatement.setDouble(10, facility.getPoolArea());
-            preparedStatement.setInt(11, facility.getFloor());
-            preparedStatement.setString(12, facility.getFacilityFree());
+//            preparedStatement.setInt(1, facility.getId());
+            preparedStatement.setString(1, facility.getName());
+            preparedStatement.setInt(2, facility.getArea());
+            preparedStatement.setDouble(3, facility.getArea());
+            preparedStatement.setInt(4, (facility.getMaxPeople()));
+            preparedStatement.setInt(5, facility.getRentTypeId());
+            preparedStatement.setInt(6, facility.getFacilityTypeId());
+            preparedStatement.setString(7, facility.getStandardRoom());
+            preparedStatement.setString(8, facility.getConvenience());
+            preparedStatement.setDouble(9, facility.getPoolArea());
+            preparedStatement.setInt(10, facility.getFloor());
+            preparedStatement.setString(11, facility.getFacilityFree());
             preparedStatement.executeUpdate();
 
         } catch (SQLException throwables) {

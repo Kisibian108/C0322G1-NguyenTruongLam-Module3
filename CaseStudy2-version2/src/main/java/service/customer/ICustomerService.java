@@ -4,12 +4,13 @@ import model.customer.Customer;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Map;
 
 public interface ICustomerService {
 
     List<Customer> findAll();
 
-    void create(Customer customer);
+    Map<String,String> create(Customer customer);
 
     void edit(Customer customer);
 
@@ -17,5 +18,5 @@ public interface ICustomerService {
 
     Customer findById(int id);
 
-    List<Customer> findByName(String name);
+    List<Customer> findByName(String name, String phone);
 }

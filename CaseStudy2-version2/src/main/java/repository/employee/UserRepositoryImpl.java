@@ -16,6 +16,7 @@ public class UserRepositoryImpl implements IUserRepository{
     List<User> userList = new ArrayList<>();
     @Override
     public List<User> findAll() throws SQLException {
+        userList.clear();
         Connection connection = new BaseRepository().getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL);
         ResultSet resultSet = preparedStatement.executeQuery();

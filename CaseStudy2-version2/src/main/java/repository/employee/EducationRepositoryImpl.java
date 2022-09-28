@@ -16,7 +16,7 @@ public class EducationRepositoryImpl implements IEducationDegreeRepository{
     List<EducationDegree> educationDegreeList = new ArrayList<>();
     @Override
     public List<EducationDegree> findAll() throws SQLException {
-
+        educationDegreeList.clear();
         Connection connection = new BaseRepository().getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL);
         ResultSet resultSet = preparedStatement.executeQuery();

@@ -15,13 +15,14 @@
 </head>
 <body>
 <div class="container">
-    <form method="post" action="/customer?action=create">
+    <form method="post" action="/customer?action=create" >
+        <div><p>${mess}</p> </div>
+<%--        <div class="mb-3">--%>
+<%--            <label for="exampleInputEmail1" class="form-label">Id</label>--%>
+<%--            <input name="id" type="number"  class="form-control" id="exampleInputEmail1">--%>
+<%--        </div>--%>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Id</label>
-            <input name="id" type="number" class="form-control" id="exampleInputEmail1">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Type ID</label>
+            <label  class="form-label">Type ID</label>
             <select name="idType">
                 <c:forEach items="${customerTypeList}" var="type">
                     <option value="${type.id}">${type.name}</option>
@@ -29,34 +30,38 @@
             </select>
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <label class="form-label">Name</label>
             <input name="name" type="text" class="form-control">
+            <p>${mapValidate.get("name")}</p>
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Birthday</label>
+            <label  class="form-label">Birthday</label>
             <input name="birthday" type="date" class="form-control">
         </div>
-        <label for="exampleInputEmail1" class="form-label"> Gender </label>
+        <label  class="form-label"> Gender </label>
 
         <select name="gender">
             <option value="0">Male</option>
             <option value="1">Female</option>
         </select>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">IdCard</label>
+            <label  class="form-label">IdCard</label>
             <input name="idCard" type="number" class="form-control">
+            <p>${mapValidate.get("idCard")}</p>
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Phone Number</label>
+            <label  class="form-label">Phone Number</label>
             <input name="phoneNumber" type="number" class="form-control">
+            <p>${mapValidate.get("phone")}</p>
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email</label>
+            <label class="form-label">Email</label>
             <input name="email" type="text" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Address</label>
+            <label  class="form-label">Address</label>
             <input name="address" type="text" class="form-control">
+            <p>${mapValidate.get("address")}</p>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>

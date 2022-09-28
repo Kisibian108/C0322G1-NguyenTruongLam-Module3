@@ -16,6 +16,7 @@ public class PositionRepositoryImpl implements IPositionRepository{
     List<Position> positionList = new ArrayList<>();
     @Override
     public List<Position> findAll() throws SQLException {
+        positionList.clear();
         Connection connection = new BaseRepository().getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL);
         ResultSet resultSet = preparedStatement.executeQuery();

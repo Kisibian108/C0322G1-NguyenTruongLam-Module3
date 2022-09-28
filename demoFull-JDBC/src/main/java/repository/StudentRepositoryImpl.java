@@ -39,7 +39,6 @@ public class StudentRepositoryImpl implements IStudentRepository {
                 student = new Student(id, name, className, gender, score);
                 studentList.add(student);
             }
-
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

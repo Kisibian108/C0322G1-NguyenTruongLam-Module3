@@ -16,28 +16,28 @@
 <body>
 <div class="container">
     <form method="post" action="/facility?action=create">
+<%--        <div class="mb-3">--%>
+<%--            <label for="exampleInputEmail1" class="form-label">Id</label>--%>
+<%--            <input name="id" type="number" class="form-control" id="exampleInputEmail1">--%>
+<%--        </div>--%>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Id</label>
-            <input name="id" type="number" class="form-control" id="exampleInputEmail1">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Name</label>
+            <label  class="form-label">Name</label>
             <input name="name" type="text" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Area</label>
+            <label  class="form-label">Area</label>
             <input name="area" type="text" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Cost</label>
+            <label  class="form-label">Cost</label>
             <input name="cost" type="number" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Max people</label>
+            <label class="form-label">Max people</label>
             <input name="maxpeople" type="number" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Rent Type</label>
+            <label  class="form-label">Rent Type</label>
             <select name="rentType">
                <option value="">Chon kieu thue </option>
                 <c:forEach items="${rentTypeList}" var="rent">
@@ -47,7 +47,7 @@
             <%--            <input name="rentType" type="text" class="form-control">--%>
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Facility Type</label>
+            <label  class="form-label">Facility Type</label>
 <%--            <input name="facilityType" type="text" class="form-control">--%>
             <select name="facilityType">
                 <c:forEach items="${facilityTypeList}" var="fcl">
@@ -57,23 +57,23 @@
         </div>
 
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Standard Room</label>
+            <label  class="form-label">Standard Room</label>
             <input name="standardroom" type="text" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Convenient</label>
+            <label  class="form-label">Convenient</label>
             <input name="convenient" type="text" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Pool Area</label>
+            <label  class="form-label">Pool Area</label>
             <input name="poolarea" type="number" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Floor</label>
+            <label  class="form-label">Floor</label>
             <input name="floor" type="number" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Facility Free</label>
+            <label class="form-label">Facility Free</label>
             <input name="facilityfree" type="text" class="form-control">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>

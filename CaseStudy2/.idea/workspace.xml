@@ -2,8 +2,111 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="39c1d5e7-8ea5-42e3-bd91-3d9eae009808" name="Changes" comment="dqwdwqd">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../demoFull-JDBC/src/main/java/controller/StudentServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demoFull-JDBC/src/main/java/controller/StudentServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/common/Validate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/controller/phongtro/PhongTroServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/controller/product/ProductServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/controller/test/DanhSachServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/phongtro/PhongTro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/phongtro/ThanhToan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/product/Category.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/product/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/test/BenhAn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/test/BenhNhan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/test/DanhSachBenhNhan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/phongtro/IPhongTroRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/phongtro/IThanhToanRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/phongtro/Impl/PhongTroRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/phongtro/Impl/ThanhToanRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/product/CategoryRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/product/ICategoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/product/IProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/product/ProductRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/test/BenhAnRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/test/BenhNhanRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/test/DanhSachRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/test/IBenhAnRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/test/IBenhNhanRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/test/IDanhSachRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/phongtro/IPhongTroService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/phongtro/IThanhToanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/phongtro/Impl/PhongTroServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/phongtro/Impl/ThanhToanServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/product/CategoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/product/ICategoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/product/IProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/product/ProductServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/test/BenhAnServiceImple.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/test/BenhNhanServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/test/DanhSachServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/test/IBenhAnService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/test/IBenhNhanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/test/IDanhSachService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/employee/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/employee/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/phongtro/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/phongtro/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/phongtro/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/product/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/product/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/product/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/test/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/test/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/test/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/common/Validate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/controller/hokhau/HoKhauServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/controller/phongtro/PhongTroServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/model/hokhau/GiaDinh.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/model/hokhau/HoKhau.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/model/phongtro/PhongTro.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/model/phongtro/ThanhToan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/repository/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/repository/hokhau/IGiaDinhRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/repository/hokhau/IHoKhauRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/repository/hokhau/Impl/GiaDinhRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/repository/hokhau/Impl/HoKhauRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/repository/phongtro/IPhongTroRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/repository/phongtro/IThanhToanRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/repository/phongtro/Impl/PhongTroRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/repository/phongtro/Impl/ThanhToanRepositoryImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/service/hokhau/IGiaDinhService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/service/hokhau/IHoKhauService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/service/hokhau/Impl/GiaDinhServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/service/hokhau/Impl/HoKhauServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/service/phongtro/IPhongTroService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/service/phongtro/IThanhToanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/service/phongtro/Impl/PhongTroServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/java/service/phongtro/Impl/ThanhToanServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/webapp/hokhau/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/webapp/hokhau/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/webapp/hokhau/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/webapp/phongtro/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/webapp/phongtro/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ThiModule3/src/main/webapp/phongtro/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-gradle/src/main/java/com/example/AppConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-gradle/src/main/java/com/example/AppInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../spring-gradle/src/main/webapp/WEB-INF/views/greeting.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/controller/customer/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/controller/customer/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/controller/employee/EmployeeServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/controller/employee/EmployeeServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/controller/facility/FacilityServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/controller/facility/FacilityServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/employee/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/employee/Employee.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/facility/Facility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/model/facility/Facility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/BaseRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/BaseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/customer/CustomerRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/customer/CustomerRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/customer/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/customer/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/employee/EducationRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/employee/EducationRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/employee/EmployeeRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/employee/EmployeeRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/employee/PositionRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/employee/PositionRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/employee/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/employee/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/facility/FacilityRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/repository/facility/FacilityRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/customer/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/customer/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/customer/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/java/service/customer/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/customer/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/customer/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/customer/customerList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/customer/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/employee/employeeList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/employee/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/facility/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy2-version2/src/main/webapp/facility/create.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../demoFull-JDBC/src/main/java/repository/StudentRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../demoFull-JDBC/src/main/java/repository/StudentRepositoryImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,6 +290,7 @@
       <workItem from="1656172984556" duration="133000" />
       <workItem from="1656173140979" duration="620000" />
       <workItem from="1656605365662" duration="118000" />
+      <workItem from="1657880609238" duration="23000" />
     </task>
     <task id="LOCAL-00001" summary="qdwq">
       <created>1656173009886</created>
